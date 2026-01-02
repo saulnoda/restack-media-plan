@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  restack-media-plan:
+    build: .
+    container_name: restack-media-plan
+    restart: unless-stopped
+    ports:
+      - "3080:80"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
